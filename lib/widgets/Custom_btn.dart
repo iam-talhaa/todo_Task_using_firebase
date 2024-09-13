@@ -7,6 +7,7 @@ class Custom_button extends StatelessWidget {
   final B_text;
   final B_height;
   final B_width;
+  final text_color;
 
   Custom_button(
       {super.key,
@@ -14,7 +15,8 @@ class Custom_button extends StatelessWidget {
       required this.ontap,
       required this.B_text,
       required this.B_height,
-      required this.B_width});
+      required this.B_width,
+      required this.text_color});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class Custom_button extends StatelessWidget {
         child: Center(
             child: Text(
           B_text,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 20, color: text_color),
         )),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:firebase_practise_todo/ui/Login/landingScreen/landing.dart';
 import 'package:firebase_practise_todo/ui/Login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,7 +23,8 @@ class _Todo_using_fState extends State<Todo_using_f> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginScreen(),
+      debugShowCheckedModeBanner: false,
+      home: Landing_Screen(),
     );
   }
 }
