@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "574661066391",
+    "project_id": "todousingfirebase-412db",
+    "storage_bucket": "todousingfirebase-412db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574661066391:android:59cd1188b528c898a3b3d2",
+        "android_client_info": {
+          "package_name": "com.example.firebase_practise_todo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5To7k65vLFvp7hQXNbwy5vcslCsUZ5lI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
