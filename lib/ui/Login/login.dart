@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practise_todo/Utils/Utils.dart';
 import 'package:firebase_practise_todo/ui/Login/Signup/Signup.dart';
+import 'package:firebase_practise_todo/ui/Login/home/homepage.dart';
 import 'package:firebase_practise_todo/widgets/Custom_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -88,9 +89,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           .then((v) {
                         UTils()
                             .Toastmsg("SignIn Successfully", Colors.blue[200]);
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => HomeScreen()));
                       }).onError((Error, s) {
-                        UTils()
-                            .Toastmsg("SignIn Successfully", Colors.blue[200]);
+                        UTils().Toastmsg(Error.toString(), Colors.red);
                       });
                     }
                   },
