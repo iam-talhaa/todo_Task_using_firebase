@@ -1,5 +1,4 @@
 import 'package:firebase_practise_todo/ui/Login/landingScreen/landing.dart';
-import 'package:firebase_practise_todo/ui/Login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
