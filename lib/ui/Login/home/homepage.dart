@@ -1,6 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:firebase_practise_todo/Utils/Utils.dart';
+import 'package:firebase_practise_todo/ui/Login/home/Update_screen.dart';
 import 'package:firebase_practise_todo/widgets/Custom_btn.dart';
 import 'package:flutter/material.dart';
 
@@ -68,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   }).then((v) {
                     UTils().Toastmsg("Task Added", Colors.blue[400]);
                     _title.clear();
+                    _description.clear();
                   }).onError((error, s) {
                     UTils().Toastmsg(error.toString(), Colors.blue[400]);
                   });
@@ -93,13 +95,36 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.indigo[200],
                           borderRadius: BorderRadius.circular(20)),
                       child: ListTile(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) => UpdateScreen(
+                                    description: snapshot
+                                        .child('description')
+                                        .value
+                                        .toString(),
+                                    title: snapshot
+                                        .child('titile')
+                                        .value
+                                        .toString(),
+                                    id: snapshot.child('ID').value.toString(),
+                                  )));
+                        },
                         trailing: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              _reference
+                                  .child(snapshot.child('ID').value.toString())
+                                  .remove()
+                                  .then((v) {
+                                UTils().Toastmsg("Task Remove Successfully",
+                                    Colors.blue[400]);
+                              }).onError((error, s) {});
+                            },
                             icon: Icon(
                               Icons.delete,
                               color: Colors.red,
                             )),
-                        title: Text(
+                        title: Text(snapshot.child('title').value.toString()),
+                        subtitle: Text(
                             snapshot.child('description').value.toString()),
                       ),
                     ),
