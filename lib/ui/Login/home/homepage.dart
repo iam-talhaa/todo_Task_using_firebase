@@ -96,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(20)),
                       child: ListTile(
                         onTap: () {
+                          print('object');
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) => UpdateScreen(
                                     description: snapshot

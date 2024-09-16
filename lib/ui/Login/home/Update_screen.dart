@@ -25,6 +25,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Update'),
+        actions: [],
       ),
       body: Column(
         children: [
