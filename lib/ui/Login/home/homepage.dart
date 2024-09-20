@@ -13,9 +13,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController _description = TextEditingController();
-  TextEditingController _title = TextEditingController();
-  DatabaseReference _reference = FirebaseDatabase.instance.ref("Todo");
+  final TextEditingController _description = TextEditingController();
+  final TextEditingController _title = TextEditingController();
+  final DatabaseReference _reference = FirebaseDatabase.instance.ref("Todo");
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.indigo[800],
-        title: Text(
+        title: const Text(
           "Tasks Screen",
           style: TextStyle(color: Colors.white),
         ),
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextFormField(
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15))),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextFormField(
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15))),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Custom_button(
@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 B_height: 40.0,
                 B_width: 200.0,
                 text_color: Colors.white),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
@@ -97,6 +97,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: ListTile(
                         onTap: () {
                           print('object');
+                          print('object');
+
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) => UpdateScreen(
                                     description: snapshot
@@ -120,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Colors.blue[400]);
                               }).onError((error, s) {});
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.delete,
                               color: Colors.red,
                             )),
@@ -133,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ],
