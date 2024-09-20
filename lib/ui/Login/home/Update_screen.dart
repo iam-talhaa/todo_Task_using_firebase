@@ -16,16 +16,17 @@ class UpdateScreen extends StatefulWidget {
 }
 
 class _UpdateScreenState extends State<UpdateScreen> {
-  TextEditingController _update_titile = TextEditingController();
-  TextEditingController _update_Descritpion = TextEditingController();
+  final TextEditingController _update_titile = TextEditingController();
+  final TextEditingController _update_Descritpion = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.indigo[300],
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Update'),
-        actions: [],
+        title: const Text('Update'),
+        actions: const [],
       ),
       body: Column(
         children: [
