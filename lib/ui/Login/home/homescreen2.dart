@@ -60,6 +60,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                             );
                           });
                     } else if (snapshot.hasError) {
+                      print("sd");
                       return Text('something went wrong');
                     } else {
                       return Container();
