@@ -20,6 +20,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
   @override
   Widget build(BuildContext context) {
     print("Homescreen ");
+    print("Homescreen ");
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home2'),
