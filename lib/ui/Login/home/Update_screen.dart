@@ -53,6 +53,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
               ontap: () {
                 //update logic here
                 print("object");
+                print("object");
               },
               B_text: "Update",
               B_height: 40.0,
