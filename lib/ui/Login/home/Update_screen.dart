@@ -50,7 +50,10 @@ class _UpdateScreenState extends State<UpdateScreen> {
           ),
           Custom_button(
               B_color: Colors.indigo[800],
-              ontap: () {},
+              ontap: () {
+                //update logic here
+                print("object");
+              },
               B_text: "Update",
               B_height: 40.0,
               B_width: 200.0,
