@@ -8,7 +8,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(Todo_using_f());
+  runApp(const Todo_using_f());
 }
 
 class Todo_using_f extends StatefulWidget {
@@ -21,7 +21,7 @@ class Todo_using_f extends StatefulWidget {
 class _Todo_using_fState extends State<Todo_using_f> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Landing_Screen(),
     );

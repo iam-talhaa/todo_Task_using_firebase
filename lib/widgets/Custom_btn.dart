@@ -9,7 +9,7 @@ class Custom_button extends StatelessWidget {
   final B_width;
   final text_color;
 
-  Custom_button(
+  const Custom_button(
       {super.key,
       required this.B_color,
       required this.ontap,

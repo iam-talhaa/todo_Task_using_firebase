@@ -17,27 +17,27 @@ class _Landing_ScreenState extends State<Landing_Screen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Image(image: AssetImage("assets/donetask.png"))),
-          Divider(),
+          const Center(child: Image(image: AssetImage("assets/donetask.png"))),
+          const Divider(),
           Custom_button(
             B_color: Colors.indigo[800],
             ontap: () {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (BuildContext context) => LoginScreen()));
+                  builder: (BuildContext context) => const LoginScreen()));
             },
             B_text: "Login",
             B_height: 40.0,
             B_width: 200.0,
             text_color: Colors.white,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Custom_button(
             B_color: Colors.indigo[800],
             ontap: () {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (BuildContext context) => signUpScreen()));
+                  builder: (BuildContext context) => const signUpScreen()));
             },
             B_text: "Sign Up",
             B_height: 40.0,

@@ -16,7 +16,7 @@ class signUpScreen extends StatefulWidget {
 class _signUpScreenState extends State<signUpScreen> {
   TextEditingController EmailContorller = TextEditingController();
   TextEditingController PasswordController = TextEditingController();
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   final _keyform = GlobalKey<FormState>();
 
   @override
@@ -25,7 +25,7 @@ class _signUpScreenState extends State<signUpScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.indigo[800],
-        title: Text(
+        title: const Text(
           "SignUp Screen",
           style: TextStyle(color: Colors.white),
         ),
@@ -37,7 +37,7 @@ class _signUpScreenState extends State<signUpScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image(image: AssetImage('assets/login.png')),
+              const Image(image: AssetImage('assets/login.png')),
               TextFormField(
                 validator: (v) {
                   if (EmailContorller.text.isEmpty) {
@@ -45,27 +45,29 @@ class _signUpScreenState extends State<signUpScreen> {
                   }
                   return null;
                 },
-                style: TextStyle(color: Colors.black),
+                style: const TextStyle(color: Colors.black),
                 keyboardType: TextInputType.emailAddress,
                 controller: EmailContorller,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(18)),
-                    prefixIcon: Icon(Icons.mail),
+                    prefixIcon: const Icon(Icons.mail),
                     hintText: "Email",
-                    hintStyle: TextStyle(color: Colors.black)),
+                    hintStyle: const TextStyle(color: Colors.black)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextFormField(
                 validator: (v) {
                   if (PasswordController.text.isEmpty) {
                     return "Enter Your Password";
-                  } else
+                  } else {
                     null;
+                  return null;
+                  }
                 },
-                style: TextStyle(color: Colors.black),
+                style: const TextStyle(color: Colors.black),
                 obscureText: true,
                 obscuringCharacter: "*",
                 keyboardType: TextInputType.text,
@@ -73,10 +75,10 @@ class _signUpScreenState extends State<signUpScreen> {
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(18)),
-                    prefixIcon: Icon(Icons.lock),
+                    prefixIcon: const Icon(Icons.lock),
                     hintText: "Password"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Custom_button(
@@ -91,7 +93,7 @@ class _signUpScreenState extends State<signUpScreen> {
                           .then((v) {
                         UTils().Toastmsg("SignUp SuccessFully", Colors.green);
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) => LoginScreen()));
+                            builder: (BuildContext context) => const LoginScreen()));
                       }).onError((Error, s) {
                         UTils().Toastmsg(Error.toString(), Colors.red);
                       });
@@ -104,16 +106,16 @@ class _signUpScreenState extends State<signUpScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Already Have an Account",
                     style: TextStyle(color: Colors.black),
                   ),
                   TextButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) => LoginScreen()));
+                            builder: (BuildContext context) => const LoginScreen()));
                       },
-                      child: Text("Login"))
+                      child: const Text("Login"))
                 ],
               ),
             ],
